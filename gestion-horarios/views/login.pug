@@ -1,0 +1,24 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    title Login
+    style.
+      body { font-family: Arial; display: flex; justify-content: center; align-items: center; height: 100vh; }
+      form { display: flex; flex-direction: column; width: 300px; }
+      input { margin-bottom: 10px; padding: 8px; }
+      button { padding: 8px; }
+  body
+    form#loginForm
+      h2 Iniciar Sesión
+      input(type="text" id="usuario" placeholder="Usuario" required)
+      input(type="password" id="password" placeholder="Contraseña" required)
+      button(type="submit") Entrar
+      #error(style="color:red;")
+    script.
+      document.getElementById('loginForm').onsubmit = function(e) {
+        e.preventDefault();
+        // Aquí puedes agregar la lógica de autenticación
+        // Si es correcto, redirige a index.html:
+        window.location = 'index.html';
+      }
